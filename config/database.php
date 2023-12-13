@@ -48,7 +48,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('sugiuralaravelonappservice-server.mysql.database.azure.com', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
+            'database' => env('sugiuralaravelonappservice-database', 'forge'),
             'username' => env('jiidssaqxz', 'forge'),
             'password' => env('88XXZ64TC455V2UA$', ''),
             'unix_socket' => env('DB_SOCKET', ''),
