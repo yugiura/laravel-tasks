@@ -69,3 +69,16 @@ Route::delete('/task/{id}', function ($id) {
 
     return redirect('/');
 });
+
+Route::post('/upload', function (Request $request) {
+    $request->validate([
+        'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    $imageName = time().'.'.$request->photo->extension();  
+    $request->photo->move(public_path('images'), $imageName);
+
+    return back()
+        ->with('success','You have successfully upload image.')
+        ->with('image',$imageName);
+});
